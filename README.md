@@ -16,6 +16,7 @@ Trabajo de practica de fullstack con Django
 - `rm -rf app/`Para borrar  elementos 
 - `Pip freeze > requirements.txt` para crear un txt en la carpeta  a través de paquetes.
 
+---
 
 ```python
 
