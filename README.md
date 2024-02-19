@@ -15,6 +15,8 @@ Trabajo de practica de fullstack con Django
 - `django-admin startproject app .` instalar la carpeta en el mismo Ssitio por el punto.
 - `rm -rf app/`Para borrar  elementos 
 - `Pip freeze > requirements.txt` para crear un txt en la carpeta  a través de paquetes.
+- `pip install -r requirements.txt`
+- `Python manager.py runserver` para correr Django.
 
 ---
 
