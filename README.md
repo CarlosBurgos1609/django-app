@@ -14,17 +14,21 @@ Trabajo de practica de fullstack con Django
 - `pip install django` instala "django".
 - `django-admin startproject app .` instalar la carpeta en el mismo Sitio por el punto.
 - `rm -rf app/`Para borrar  elementos 
-- `Pip freeze > requirements.txt` para crear un txt en la carpeta  a través de paquetes.
+- `pip freeze > requirements.txt` para crear un txt en la carpeta  a través de paquetes.
 - `pip install -r requirements.txt`
 ---
-### activar el DJANGO
-- `Python manager.py runserver` para correr Django en el puerto //8000.
+### activar el DJANGO para entrar.
+- `source` venv/script/ `activate`
+- `py manage.py runserver` para correr Django en el puerto //8000.
+- `python manage.py runserver` para correr Django en el puerto //8000.
+- ` crtl + c` para apagar el Puerto 
 ---
 ## Staging
 - `git status`
 - `git add .` para subir todo el repositorio en git hub.
 - `git commit -m "//comentario"` colocar un comentario.
 - `git push` subir el add y el comentario.
+
 
 Dentro de una terminal que no carga se coloca `crtl + c`
 ---
