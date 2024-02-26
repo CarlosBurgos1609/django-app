@@ -42,6 +42,8 @@ Trabajo de practica de fullstack con Django
 - `$py manage.py showmigrations ` Visualizar migraciones.
 - `$py manage.py makemigrations` Crear migraciones o crear modelos.
 
+- Crear el super usuario  con el siguiente comando:
+- `py manage.py createsuperuser` Crear el super usuarioli
 
 ```python
 
