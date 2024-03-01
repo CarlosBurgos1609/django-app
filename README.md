@@ -29,8 +29,8 @@ Trabajo de practica de fullstack con Django
 
 ---
 ## Staging
-- `git status`
-- `git add .` para subir todo el repositorio en git hub.
+- `git status` mira el estado actual
+- `git add .` agrega los comabios al estado actual
 - `git commit -m "//comentario"` colocar un comentario.
 - `git push` subir el add y el comentario.
 
@@ -42,8 +42,29 @@ Trabajo de practica de fullstack con Django
 - `$py manage.py showmigrations ` Visualizar migraciones.
 - `$py manage.py makemigrations` Crear migraciones o crear modelos.
 
-- Crear el super usuario  con el siguiente comando:
-- `py manage.py createsuperuser` Crear el super usuarioli
+- #### Crear el super usuario  con el siguiente comando:
+- `py manage.py createsuperuser` Crear el super usuario
+- 
+- `pip install psycopg2` para instalar controlador de python.
+
+-  #### Cuando se clona el repositorio con:
+- `git pull`
+- `pip install -r requirements.txt` Recuperar todos los paquetes que se descargaron en el repositorio
+
+- ### Base de Datos `settings.py`
+```python
+
+'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'app',
+        "USER": 'postgres',
+        'PASSWORD': 'unicesmag',
+        'PORT': '5432',
+    }
+```
+`py manage.py migrate` para actualizar en postgres la data base
+
+
 
 ```python
 
