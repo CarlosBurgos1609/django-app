@@ -47,7 +47,7 @@ Trabajo de practica de fullstack con Django
 - 
 - `pip install psycopg2` para instalar controlador de python.
 
--  #### Cuando se clona el repositorio con:
+-  #### Cuando se clona el repositorio Cuanto ya l habia clonado anteriormente en el mismo sitio:
 - `git pull`
 - `pip install -r requirements.txt` Recuperar todos los paquetes que se descargaron en el repositorio
 
@@ -63,14 +63,19 @@ Trabajo de practica de fullstack con Django
     }
 ```
 `py manage.py migrate` para actualizar en postgres la data base
+---
+### Crear una nueva app a través de comandos de git
+
+`py manage.py startapp `(nombre que se le quiere dar) // para actualizar en postgres la data base
 
 
 
+<!-- 
 ```python
 
 def a:
     return 1
-```
+``` -->
 
 ---
 <!-- 
