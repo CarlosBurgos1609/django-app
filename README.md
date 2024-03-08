@@ -68,6 +68,23 @@ Trabajo de practica de fullstack con Django
 
 `py manage.py startapp `(nombre que se le quiere dar) // para actualizar en postgres la data base
 
+``` c++
+INSTALLED_APPS = [
+    `'academics.apps.AcademicsConfig',`
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+
+```
+`py manage.py makemigrations`
+`py manage.py showmigrate academics`
+`py manage.py sqlmigrate academics 0001`
+
 
 
 <!-- 
