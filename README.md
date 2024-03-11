@@ -81,9 +81,10 @@ INSTALLED_APPS = [
 
 
 ```
-`py manage.py makemigrations`
+`py manage.py makemigrations` Crea un archivo de migración 
 `py manage.py showmigrate academics`
 `py manage.py sqlmigrate academics 0001`
+`py manage.py migrate`
 
 
 
