@@ -81,10 +81,16 @@ INSTALLED_APPS = [
 
 
 ```
-`py manage.py makemigrations` Crea un archivo de migración 
-`py manage.py showmigrate academics`
-`py manage.py sqlmigrate academics 0001`
-`py manage.py migrate`
+`py manage.py makemigrations` Crea un nueva migración 
+`py manage.py showmigrate academics` visualizar la migración
+`py manage.py sqlmigrate academics 0001` Visualizar la migración 
+`py manage.py migrate` pasar la migración a pgAdmin
+
+Una vez que se agregan nuevos valores 
+`py manage.py sqlmigrate academics 0001`para visualizar el modelo 1
+`py manage.py sqlmigrate academics 0002`para visualizar el modelo 2 una vez actualizada la tabla
+
+
 
 
 
