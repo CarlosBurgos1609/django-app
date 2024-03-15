@@ -86,9 +86,19 @@ INSTALLED_APPS = [
 `py manage.py sqlmigrate academics 0001` Visualizar la migración 
 `py manage.py migrate` pasar la migración a pgAdmin
 
-Una vez que se agregan nuevos valores 
+Visualizar el SQl de la base de datos
 `py manage.py sqlmigrate academics 0001`para visualizar el modelo 1
 `py manage.py sqlmigrate academics 0002`para visualizar el modelo 2 una vez actualizada la tabla
+
+---
+
+Agregar valores en la base de datos
+`Py manage.py shell`
+`from academics.models import User`
+`user = User(email = "carlos@gmail.com", password = "1234")`
+`user.save()`
+`User.objects.all()`
+`exit()`
 
 
 
