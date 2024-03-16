@@ -35,12 +35,12 @@ Trabajo de practica de fullstack con Django
 - `git push` subir el add y el comentario.
 
 ---
-#### Visualizar las migraciones
+#### Realizar y visualizar la migracion
 - Despues de aplica la base de datos de `models.py`
-- `$py manage.py migrate` convierte una migración en tabla.
-
-- `$py manage.py showmigrations ` Visualizar migraciones.
 - `$py manage.py makemigrations` Crear migraciones o crear modelos.
+- `$py manage.py migrate` Sube las migraciones a la base de datos.
+- `$py manage.py showmigrations ` Visualizar migraciones. realizadas o pendientes
+
 
 - #### Crear el super usuario  con el siguiente comando:
 - `py manage.py createsuperuser` Crear el super usuario
