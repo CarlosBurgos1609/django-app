@@ -62,11 +62,11 @@ Trabajo de practica de fullstack con Django
         'PORT': '5432',
     }
 ```
-`py manage.py migrate` para actualizar en postgres la data base
+- `py manage.py migrate` para actualizar en postgres la data base
 ---
 ### Crear una nueva app a través de comandos de git
 
-`py manage.py startapp `(nombre que se le quiere dar) // para actualizar en postgres la data base
+- `py manage.py startapp `(nombre que se le quiere dar) // para actualizar en postgres la data base
 
 ``` c++
 INSTALLED_APPS = [
@@ -81,24 +81,24 @@ INSTALLED_APPS = [
 
 
 ```
-`py manage.py makemigrations` Crea un nueva migración 
-`py manage.py showmigrations academics` visualizar la migración
-`py manage.py sqlmigrate academics 0001` Visualizar la migración 
-`py manage.py migrate` pasar la migración a pgAdmin
+- `py manage.py makemigrations` Crea un nueva migración 
+- `py manage.py showmigrations academics` visualizar la migración
+- `py manage.py sqlmigrate academics 0001` Visualizar la migración 
+- `py manage.py migrate` pasar la migración a pgAdmin
 
 Visualizar el SQl de la base de datos
-`py manage.py sqlmigrate academics 0001`para visualizar el modelo 1
-`py manage.py sqlmigrate academics 0002`para visualizar el modelo 2 una vez actualizada la tabla
+- `py manage.py sqlmigrate academics 0001`para visualizar el modelo 1
+- `py manage.py sqlmigrate academics 0002`para visualizar el modelo 2 una vez actualizada la tabla
 
 ---
 
 Agregar valores en la base de datos
-`Py manage.py shell`
-`from academics.models import User`
-`user = User(email = "carlos@gmail.com", password = "1234")`
-`user.save()`
-`User.objects.all()`
-`exit()`
+- `Py manage.py shell`
+- `from academics.models import User`
+- `user = User(email = "carlos@gmail.com", password = "1234")`
+- `user.save()`
+- `User.objects.all()`
+- `exit()`
 
 
 
