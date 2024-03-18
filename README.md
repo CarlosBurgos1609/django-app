@@ -102,6 +102,7 @@ Agregar valores en la base de datos
 ---
 #Intanciar variables de entorno en Django
 
+- `export $(cat .env | grep -v '^#' | xargs)` Cuando se actualiza el puerto de `.env`
 
 
 
