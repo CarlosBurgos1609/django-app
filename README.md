@@ -100,7 +100,7 @@ Agregar valores en la base de datos
 - `User.objects.all()`
 - `exit()`
 ---
-#Intanciar variables de entorno en Django
+# Intanciar variables de entorno en Django
 
 - `export $(cat .env | grep -v '^#' | xargs)` Cuando se actualiza el puerto de `.env`
 
