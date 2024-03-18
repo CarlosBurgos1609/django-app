@@ -99,6 +99,8 @@ Agregar valores en la base de datos
 - `user.save()`
 - `User.objects.all()`
 - `exit()`
+---
+#Intanciar variables de entorno en Django
 
 
 
