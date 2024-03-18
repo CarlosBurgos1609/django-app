@@ -101,7 +101,16 @@ Agregar valores en la base de datos
 - `exit()`
 ---
 # Intanciar variables de entorno en Django
+- `.env` creamos en el proyecto principal
+```python
 
+DB_NAME=app
+DB_USER=postgres
+DB_PASSWORD=unicesmag
+DB_HOST=localhost
+DB_PORT=5432
+
+```
 - `export $(cat .env | grep -v '^#' | xargs)` Cuando se actualiza el puerto de `.env`
 
 
