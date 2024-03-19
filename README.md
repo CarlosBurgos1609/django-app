@@ -95,7 +95,7 @@ Visualizar el SQl de la base de datos
 Agregar valores en la base de datos
 - `Py manage.py shell`
 - `from academics.models import User`
-- `user = User(email = "carlos@gmail.com", password = "1234")`
+- `user = User(email = "carlos@gmail.com", password = "1234")exit`
 - `user.save()`
 - `User.objects.all()`
 - `exit()`
