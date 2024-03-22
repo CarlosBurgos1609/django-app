@@ -1,74 +1,95 @@
-import datetime
 from django.db import models
+import datetime
 
 # Create your models here.
-# model1.DateTimeField(auto_now = True, null = false)
 class User(models.Model):
-    email = models.EmailField(null = True, blank = False)    
-    password = models.CharField(null = True, blank = False)
-    status = models.BooleanField(default = True)
-    create_at = models.DateTimeField(default = datetime.datetime.now())
-    update_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null = True, blank = True)
-    
+    id= models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    email = models.EmailField(max_length=50, unique=True, blank=False, null=False)
+    password = models.CharField(max_length=50, blank=False, null=False)
+    status = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
     def __str__(self):
         return self.email
+
+class identification_type(models.Model):
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    name = models.CharField(max_length=50, blank=False, null=False)
+    abrebiation = models.CharField(max_length=5, blank=False, null=False)
+    description = models.CharField(max_length=100, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    
+    def __str__(self):
+            return self.name
+
+class country(models.Model):   
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    name = models.CharField(max_length=50, blank=False, null=False)
+    abrebiation = models.CharField(max_length=5, blank=False, null=False)
+    description = models.CharField(max_length=100, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.name
+    
+class department(models.Model):
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    name = models.CharField(max_length=50, blank=False, null=False)
+    abrebiation = models.CharField(max_length=5, blank=False, null=False)
+    description = models.CharField(max_length=100, blank=False, null=False)
+    id_country = models.ForeignKey(country, on_delete=models.CASCADE, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.name
+    
+class cities(models.Model):
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    name = models.CharField(max_length=50, blank=False, null=False)
+    abrebiation = models.CharField(max_length=5, blank=False, null=False)
+    description = models.CharField(max_length=100, blank=False, null=False)
+    id_department = models.ForeignKey(department, on_delete=models.CASCADE, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.name
+    
+class person (models.Model):
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    id_ident_type = models.ForeignKey(identification_type, on_delete=models.CASCADE, blank=False, null=False)
+    id_ident_number = models.IntegerField( unique=True, blank=False, null=False)
+    id_ident_exp_city = models.ForeignKey(cities, on_delete=models.CASCADE, blank=False, null=False)
+    address = models.CharField(max_length= 50, blank=False, null=False)
+    phone = models.CharField(max_length=50, blank=False, null=False)
+    id_user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False) 
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    status = models.BooleanField(default=True)
+    def __str__(self):
+        return self.name
+    
+class student(models.Model):
+    id = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    code= models.CharField(max_length=50, blank=False, null=False)
+    id_person = models.ForeignKey(person, on_delete=models.CASCADE, blank=False, null=False)
+    status = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
+    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.id
+    
+
     
     
-class Person(models.Model):
-    firstname = models.CharField(max_length = 20, blank = False)
-    lastname = models.CharField(max_length = 20, blank = False)
-    age = models.IntegerField(max_length = 15, blank = False)
-    id_ident_type = models.ForeignKey('Identification_types', on_delete = models.CASCADE, blank = False)
-    ident_number = models.CharField(max_length = 12, blank = False)
-    id_exp_city = models.ForeignKey( 'Cities', on_delete = models.CASCADE, blank = False)
-    address = models.CharField()#max_Length = 150)
-    mobile = models.CharField( )#max_Length = 50, blank = False)
-    id_user = models.ForeignKey( 'User', on_delete = models.CASCADE, blank = False)
-    create_at = models.DateTimeField(default = datetime.datetime.now())
-    update_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null = True, blank = True)
-    
-class Students(models.Model):
-    code = models.CharField(max_length=50, blank = True)
-    id_person = models.ForeignKey('Person', on_delete = models.CASCADE, blank = False)
-    status = models.BooleanField(default = True)
-    created_at = models.DateTimeField(default = datetime.datetime.now())
-    updated_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null =True, blank = True)
-    
-class Identification_types(models.Model):
-    name = models.CharField(max_length = 50, blank = False)
-    abrev = models.CharField(max_length = 10, blank = False)
-    descript =  models.CharField(max_length = 100, blank = False)
-    created_at = models.DateTimeField(default = datetime.datetime.now())
-    updated_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null =True, blank = True)
-    
-class Cities(models.Model):
-    name = models.CharField(max_length = 10, blank = False)
-    abrev = models.CharField(max_length = 10, blank = False)
-    descript =  models.CharField(max_length = 10, blank = False)
-    id_dept = models.ForeignKey("Departaments", on_delete = models.CASCADE, blank = False)
-    created_at = models.DateTimeField(default = datetime.datetime.now())
-    updated_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null =True, blank = True)
-    
-class Departaments(models.Model):
-    name = models.CharField(max_length = 10, blank = False)
-    abrev = models.CharField(max_length = 10, blank = False)
-    descript =  models.CharField(max_length = 10, blank = False)
-    id_country = models.ForeignKey("Countries", on_delete = models.CASCADE, blank = False)
-    created_at = models.DateTimeField(default = datetime.datetime.now())
-    updated_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null =True, blank = True)
-    
-class Countries(models.Model):
-    name = models.CharField(max_length = 10, blank = False)
-    abrev = models.CharField(max_length = 10, blank = False)
-    descript =  models.CharField(max_length = 10, blank = False)
-    created_at = models.DateTimeField(default = datetime.datetime.now())
-    updated_at = models.DateTimeField(default = datetime.datetime.now())
-    deleted_at = models.DateTimeField(null =True, blank = True)
-    
+
     
