@@ -23,6 +23,12 @@ def get_data():
         print("[6]. Exit")
         opt = input("::: Press any options:::")
         
+        # De la ocpción seleccionada debe mostrar 
+            #-name         
+            #-gravity         
+            #-inclination         
+            #-is planet?
+        #if opt == 1         
     
     
     
