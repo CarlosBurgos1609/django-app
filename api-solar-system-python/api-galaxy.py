@@ -13,7 +13,7 @@ def get_data():
         response.raise_for_status() #Read error
         
         data = response.json()
-        
+        #1. Crear un menu
         print("### Main menu####")
         print("[1]. Planets")
         print("[2]. Moons")
