@@ -1,4 +1,5 @@
 import requests #let 'u get data from api-url'
+# pip install requests
 import os #let 'u execute comands'
 
 def get_data():
