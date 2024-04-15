@@ -14,6 +14,8 @@ def get_commet_data(api_key):
         #pmet mame
         #Absolute magnide
         #Estimated diameter max(KM)
+        #Estimated diameter min(KM)
+        #Estimated diameter max(FT)
         #Estimated diameter min(FT)
         #orbutal_data:
             #last_observation_date
