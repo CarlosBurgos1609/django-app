@@ -9,6 +9,14 @@ def get_commet_data(api_key):
         response = requests.get(api_url)
         response.raise_for_status()
         data = response.json()
+        
+        #Show:
+        #pmet mame
+        #Absolute magnide
+        #Estimated diameter max(KM)
+        #Estimated diameter min(FT)
+        #orbutal_data:
+            #last_observation_date
     except requests.exceptions.RequestException as e:
         print(f"API error: {e}")
 #Main
