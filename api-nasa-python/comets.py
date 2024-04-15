@@ -11,8 +11,10 @@ def get_commet_data(api_key):
         data = response.json()
         
         #Show:
-        #pmet mame
+        #Comet name
+        # os.system('clear')
         #Absolute magnide
+        print(f"Comet name: {data['name']} ")
         #Estimated diameter max(KM)
         #Estimated diameter min(KM)
         #Estimated diameter max(FT)
