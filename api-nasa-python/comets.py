@@ -13,8 +13,12 @@ def get_commet_data(api_key):
         #Show:
         #Comet name
         os.system('clear')
-        #Absolute magnide
         print(f"Comet name: {data['name']} ")
+         #Absolute magnitude
+        print(f"Comet Absolute magnitude: {data['absolute_magnitude_h']} ")
+       
+        
+        
         #Estimated diameter max(KM)
         print(f"Comet Estimated diameter max(KM): {data['estimated_diameter']['kilometers']['estimated_diameter_max']} ")
         #Estimated diameter min(KM)
