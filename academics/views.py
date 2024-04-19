@@ -5,4 +5,4 @@ def index(request):
     return HttpResponse(":::Welcom to my site:::")
 
 def list_person(request):
-    return HttpResponse ("Here you find a lisr of people")
+    return HttpResponse ("Here you find a list of people")
