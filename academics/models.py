@@ -3,8 +3,8 @@ import datetime
 
 # Create your models here.
 class DateTimeModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, null = False, blank = False)
-    updated_at = models.DateTimeField(auto_now=True, null = False, blank = False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
     
     class Meta:
