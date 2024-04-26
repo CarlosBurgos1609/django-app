@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'academics.apps.AcademicsConfig',
+    'finance.apps.FinanceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'academics', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'finance', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
