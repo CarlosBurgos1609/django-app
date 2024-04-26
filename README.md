@@ -19,6 +19,7 @@ Trabajo de practica de fullstack con Django
 
 - `pip freeze > requirements.txt` para crear un txt en la carpeta  a través de paquetes.
 - `pip install -r requirements.txt` actualizacion de los requirements.txt
+- para crear app con modulos `py manage.py startapp`"nombre"
 ---
 ### Activar el DJANGO para entrar.
 

@@ -15,7 +15,7 @@ class User(models.Model):
     email = models.EmailField(max_length=50, unique=True, blank=False, null=False)
     password = models.CharField(max_length=50, blank=False, null=False)
     status = models.BooleanField(default=True)
-    
+     
     
 
 class identification_type(models.Model):
