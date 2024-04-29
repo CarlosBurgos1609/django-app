@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import User
-# Create your views here.
+from .forms import UserForm
+# Create your vi    ews here.
 def index(request):
     return HttpResponse(":::Welcom to my site:::")
 
@@ -11,4 +12,11 @@ def list_users(request):
     return render(request, 'academics/list_users.html', {'users':users})
 
 def create_user(request):
-    return HttpResponse ("Here you find a list of people")
+    
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserForm()    
+    return render(request, 'academics/create_user.html', {'forms':form})

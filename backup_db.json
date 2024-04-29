@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "email": "admin@admin.com",
+        "password": "pbkdf2_sha256$720000$CIbqwYH39NhpJRd0FhHcLx$p5q6+NkXPmhD1PhkIF3tllAnWb8aWnsBXfbzksZHb58="
+    }
+]

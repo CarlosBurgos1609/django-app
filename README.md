@@ -114,6 +114,29 @@ DB_PORT=5432
 ```
 - `export $(cat .env | grep -v '^#' | xargs)` Cuando se actualiza el puerto de `.env`
 
+---
+# En academics/management/comands
+
+```python
+data = [
+            {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'password': user.password
+            
+            }
+            for user in users
+        ]
+        
+        #Save to Json format
+        with open('backup_db.json','w') as file:
+            json.dump(data, file, indent=4 )
+
+```
+
+- `py manage.py backup_db` para crear el archivo JSON en la raiz
+
 
 
 
